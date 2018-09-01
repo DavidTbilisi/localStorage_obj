@@ -1,11 +1,9 @@
 function DB () {
-   var items = {};
-   var key; 
-   var value;
+   var items = {}, key, value;
 
     this.get = function (key) {
         return localStorage[key];
-    }
+    };
     this.set = function (object) {
        this.items = {};
         if (typeof object == 'object') {
@@ -18,24 +16,22 @@ function DB () {
             console.error('set argument must be object');
         }
         return this;
-    }
+    };
     this.rm = function (key) {
         localStorage.removeItem(key);
         return this;
-    }
+    };
     this.clear = function () {
         localStorage.clear();
         return this;
-    }
+    };
     this.nth = function (number) {
         return localStorage.key(number);
-    }
+    };
 
     this.last = function () {
         return this.items;
-    }
-
-
+    };
     this.getAll = function (keyValue) {
        var keys = Object.keys(localStorage);
        var values = Object.values(localStorage);
@@ -51,7 +47,7 @@ function DB () {
             }
             return archive;
         }
-    }
+    };
 }
 
 
