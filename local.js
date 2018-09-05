@@ -4,7 +4,7 @@ function DB () {
     this.get = function (key) {
         return localStorage[key];
     };
-    this.set = function (object) {
+    this.save = function (object) {
        this.items = {};
         if (typeof object == 'object') {
                 for(element in object) {
@@ -55,3 +55,22 @@ var db = new DB;
 
 var query = db.set({'name':"david", 'lname':"chincharashvili"});
 console.log( query.last() );
+
+/*
+
+გაყოფა - მეტი მოხრილობა
+
+დამოკიდებულების ჩანერგვა
+
+
+	public function i_print( $data ){
+		echo '<script>';
+		echo 'console.log('. json_encode( $data ) .')';
+		echo '</script>';
+	}
+	public function i_print( $word ) {
+		print_r($word);
+	}
+
+
+*/
