@@ -8,7 +8,7 @@ db.save({name:'john'.lastname:'doe'});
 // get var by key
 db.get('name');
 
-// list all vars as array
+// list all vars as Object
 db.getAll();
 
 // get var key by it's number
