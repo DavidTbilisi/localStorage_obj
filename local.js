@@ -53,24 +53,8 @@ function DB () {
 
 var db = new DB;
 
-var query = db.set({'name':"david", 'lname':"chincharashvili"});
+var query = db.save({'name':"david", 'lname':"chincharashvili"});
 console.log( query.last() );
 
-/*
+// todo: add json string
 
-გაყოფა - მეტი მოხრილობა
-
-დამოკიდებულების ჩანერგვა
-
-
-	public function i_print( $data ){
-		echo '<script>';
-		echo 'console.log('. json_encode( $data ) .')';
-		echo '</script>';
-	}
-	public function i_print( $word ) {
-		print_r($word);
-	}
-
-
-*/
