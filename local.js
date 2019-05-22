@@ -33,6 +33,9 @@ function DB () {
         return this.items;
     };
     this.getAll = function (keyValue) {
+       // is string?
+       
+       // if (is object ){
        var keys = Object.keys(localStorage);
        var values = Object.values(localStorage);
         if(keyValue == 1){
@@ -47,7 +50,11 @@ function DB () {
             }
             return archive;
         }
+    // } // endif;
     };
+   
+   
+   
 }
 
 
