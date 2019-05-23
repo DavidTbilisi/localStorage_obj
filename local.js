@@ -5,6 +5,17 @@ function DB () {
         return localStorage[key];
     };
     this.save = function (object) {
+        console.log(object)
+        let type = typeof object;
+        let isString = type == "string";
+        let isObject = type == "object";
+        if (isString){
+           try{  object = JSON.parse(object);} 
+           catch (e) {
+            console.log(e)
+           }
+         }
+ 
        this.items = {};
         if (typeof object == 'object') {
                 for(element in object) {
@@ -33,9 +44,7 @@ function DB () {
         return this.items;
     };
     this.getAll = function (keyValue) {
-       // is string?
-       
-       // if (is object ){
+
        var keys = Object.keys(localStorage);
        var values = Object.values(localStorage);
         if(keyValue == 1){
@@ -49,8 +58,9 @@ function DB () {
                 archive[ keys[i] ] = localStorage.getItem( keys[i] );
             }
             return archive;
-        }
-    // } // endif;
+        } 
+
+
     };
    
    
@@ -60,8 +70,5 @@ function DB () {
 
 var db = new DB;
 
-var query = db.save({'name':"david", 'lname':"chincharashvili"});
-console.log( query.last() );
 
 // todo: add json string
-
